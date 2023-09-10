@@ -1,0 +1,19 @@
+(library
+ (name driver)
+ (public_name publicomp.driver)
+ (libraries surface)
+ (modules driver))
+
+(executable
+ (name publicomp)
+ (package publicomp)
+ (modules publicomp)
+ (public_name publicomp)
+ (libraries publicomp.driver))
+
+(documentation
+ (package publicomp)) 
+
+(alias
+ (name publicomp)
+ (deps publicomp.exe))

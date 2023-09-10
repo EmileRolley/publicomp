@@ -1,0 +1,21 @@
+(library
+ (name surface)
+ (public_name publicomp.surface)
+ (libraries
+  menhirLib
+  sedlex
+  base
+  nice_parser
+  re)
+ (preprocess
+  (pps sedlex.ppx)))
+  
+(menhir
+ (modules tokens)
+ (flags --only-tokens))
+
+(menhir
+ (modules tokens parser)
+ (merge_into parser)
+ (flags --external-tokens Tokens --table --explain))
+
